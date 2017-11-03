@@ -5,5 +5,8 @@
 
     <string name="vision_list">Vision List</string>
 
+    <string name="quotes_list">Quotes</string>
+
     <string name="save">Save</string>
+
 </resources>

@@ -3,20 +3,21 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+
     <item
-        android:id="@+id/grateful_tab"
+        android:id="@+id/grateful_tab2"
         android:orderInCategory="1"
         app:showAsAction="always"
         android:title="@string/grateful_list"/>
 
     <item
-        android:id="@+id/vision_tab"
+        android:id="@+id/vision_tab2"
         android:orderInCategory="2"
         app:showAsAction="always"
         android:title="@string/vision_list"/>
 
     <item
-        android:id="@+id/quotes_tab"
+        android:id="@+id/quotes_tab2"
         android:orderInCategory="3"
         app:showAsAction="always"
         android:title="@string/quotes_list"/>

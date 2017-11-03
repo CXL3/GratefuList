@@ -1,6 +1,7 @@
 package com.appfunlu.lawofattraction;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
@@ -9,7 +10,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -32,8 +32,8 @@ public class MainActivity extends AppCompatActivity {
      * dislpay it in the TextView
      */
     private void showGratefulText(){
-        String textInput = mInputGratefulList.getText().toString();
-        mGratefulList.setText(textInput.toString());
+        String gTextInput = mInputGratefulList.getText().toString();
+        mGratefulList.setText(gTextInput.toString());
     }
 
     @Override
@@ -47,10 +47,12 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int itemThatWasClickedId = item.getItemId();
-        if (itemThatWasClickedId == R.id.grateful_tab) {
+
+        if (itemThatWasClickedId == R.id.vision_tab) {
             Context context = MainActivity.this;
-            String textToShow = "Grateful list clicked";
-            Toast.makeText(context, textToShow, Toast.LENGTH_SHORT).show();
+            Class destinationActivity = VisionActivity.class;
+            Intent startVisionActivityIntent = new Intent(context, destinationActivity);
+            startActivity(startVisionActivityIntent);
             return true;
         }
         return super.onOptionsItemSelected(item);

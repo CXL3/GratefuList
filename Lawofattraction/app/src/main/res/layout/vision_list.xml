@@ -1,5 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ListView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent">
 
-</ListView>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.appfunlu.lawofattraction.VisionActivity">
+    
+    <EditText
+        android:id="@+id/vision_list_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="What is your dream?"
+        android:textSize="25sp"/>
+    
+    <Button
+        android:id="@+id/save_vlist_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:textSize="22sp"
+        android:onClick="saveVisionList"
+        android:text="@string/save"/>
+    
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15sp">
+            
+            <TextView
+                android:id="@+id/vision_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="22sp"/>
+
+        </ScrollView>
+
+    </FrameLayout>
+
+</LinearLayout>
