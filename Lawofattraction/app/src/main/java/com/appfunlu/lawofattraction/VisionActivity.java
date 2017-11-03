@@ -48,16 +48,25 @@ public class VisionActivity extends AppCompatActivity{
 
         if (itemThatWasClickedId == R.id.grateful_tab2) {
             Context context = VisionActivity.this;
-            Class destinationActivity2 = MainActivity.class;
-            Intent startMainActivityIntent = new Intent(context, destinationActivity2);
+            Class destinationActivity3 = MainActivity.class;
+            Intent startMainActivityIntent = new Intent(context, destinationActivity3);
             startActivity(startMainActivityIntent);
             return true;
 
+        }
+
+        if (itemThatWasClickedId == R.id.quotes_tab2) {
+            Context context = VisionActivity.this;
+            Class destinationActivity4 = QuotesActivity.class;
+            Intent startQuotesActivityIntent = new Intent(context, destinationActivity4);
+            startActivity(startQuotesActivityIntent);
+            return true;
         }
         return super.onOptionsItemSelected(item);
     }
 
     public void saveVisionList(View v){
+
         showVisionText();
     }
 

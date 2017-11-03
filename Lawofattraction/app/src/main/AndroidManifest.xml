@@ -24,6 +24,15 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.appfunlu.lawofattraction.MainActivity" />
         </activity>
+
+        <activity
+            android:name="com.appfunlu.lawofattraction.QuotesActivity"
+            android:parentActivityName="com.appfunlu.lawofattraction.MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.appfunlu.lawofattraction.MainActivity" />
+        </activity>
+
     </application>
 
 </manifest>

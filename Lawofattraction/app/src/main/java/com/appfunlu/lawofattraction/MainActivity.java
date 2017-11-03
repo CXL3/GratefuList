@@ -50,15 +50,25 @@ public class MainActivity extends AppCompatActivity {
 
         if (itemThatWasClickedId == R.id.vision_tab) {
             Context context = MainActivity.this;
-            Class destinationActivity = VisionActivity.class;
-            Intent startVisionActivityIntent = new Intent(context, destinationActivity);
+            Class destinationActivity1 = VisionActivity.class;
+            Intent startVisionActivityIntent = new Intent(context, destinationActivity1);
             startActivity(startVisionActivityIntent);
+            return true;
+        }
+
+        if (itemThatWasClickedId == R.id.quotes_tab) {
+            Context context = MainActivity.this;
+            Class destinationActivity2 = QuotesActivity.class;
+            Intent startQuotesActivityIntent = new Intent(context, destinationActivity2);
+            startActivity(startQuotesActivityIntent);
             return true;
         }
         return super.onOptionsItemSelected(item);
     }
 
+
     public void saveGratitudeList(View v) {
+
         showGratefulText();
     }
 }
