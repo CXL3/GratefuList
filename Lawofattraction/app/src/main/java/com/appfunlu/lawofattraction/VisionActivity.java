@@ -24,9 +24,10 @@ public class VisionActivity extends AppCompatActivity{
         setContentView(R.layout.vision_list);
 
 
-        mInputVisionList =(EditText) findViewById(R.id.vision_list_input);
+        mInputVisionList = (EditText) findViewById(R.id.vision_list_input);
 
-        mVisionList =(TextView) findViewById(R.id.vision_list);
+        mVisionList = (TextView) findViewById(R.id.vision_list);
+
 
     }
 

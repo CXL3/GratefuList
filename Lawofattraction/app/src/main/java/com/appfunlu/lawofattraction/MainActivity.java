@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
         mInputGratefulList = (EditText) findViewById(R.id.grateful_input_box);
 
         mGratefulList = (TextView) findViewById(R.id.grateful_list);
+
     }
 
     /**
