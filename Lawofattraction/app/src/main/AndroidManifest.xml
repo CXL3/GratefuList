@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.appfunlu.lawofattraction.MainActivity">
+        <activity android:name="com.appfunlu.lawofattraction.MainActivity"
+            android:label="Grateful List">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -19,7 +20,8 @@
 
         <activity
             android:name="com.appfunlu.lawofattraction.VisionActivity"
-            android:parentActivityName="com.appfunlu.lawofattraction.MainActivity">
+            android:parentActivityName="com.appfunlu.lawofattraction.MainActivity"
+            android:label="Vision List">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.appfunlu.lawofattraction.MainActivity" />
@@ -27,7 +29,8 @@
 
         <activity
             android:name="com.appfunlu.lawofattraction.QuotesActivity"
-            android:parentActivityName="com.appfunlu.lawofattraction.MainActivity">
+            android:parentActivityName="com.appfunlu.lawofattraction.MainActivity"
+            android:label="Quotes">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.appfunlu.lawofattraction.MainActivity" />

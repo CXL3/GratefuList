@@ -1,6 +1,5 @@
 package com.appfunlu.lawofattraction;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,7 +7,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.TextView;
 
 
@@ -33,21 +31,23 @@ public class QuotesActivity extends AppCompatActivity{
     public boolean onOptionsItemSelected(MenuItem item) {
         int itemThatWasClickedId = item.getItemId();
 
-        if (itemThatWasClickedId == R.id.vision_tab3) {
+        if (itemThatWasClickedId == R.id.grateful_tab3) {
             Context context = QuotesActivity.this;
             Class destinationActivity5 = MainActivity.class;
             Intent startMainActivityIntent = new Intent(context, destinationActivity5);
             startActivity(startMainActivityIntent);
             return true;
+
         }
 
-        if (itemThatWasClickedId == R.id.quotes_tab3) {
+        if (itemThatWasClickedId == R.id.vision_tab3) {
             Context context = QuotesActivity.this;
             Class destinationActivity6 = VisionActivity.class;
-            Intent startVisionActivityIntent = new Intent(context, destinationActivity6);
-            startActivity(startVisionActivityIntent);
+            Intent startMainActivityIntent = new Intent(context, destinationActivity6);
+            startActivity(startMainActivityIntent);
             return true;
         }
+
         return super.onOptionsItemSelected(item);
     }
 

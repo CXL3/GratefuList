@@ -15,10 +15,4 @@
         app:showAsAction="always"
         android:title="@string/vision_list"/>
 
-    <item
-        android:id="@+id/quotes_tab3"
-        android:orderInCategory="3"
-        app:showAsAction="always"
-        android:title="@string/quotes_list"/>
-
 </menu>

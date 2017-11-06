@@ -1,12 +1,13 @@
 <resources>
     <string name="app_name">LawOfAttraction</string>
 
-    <string name="grateful_list">Gratitudes</string>
+    <string name="grateful_list">Grateful List</string>
 
-    <string name="vision_list">Visions</string>
+    <string name="vision_list">Vision List</string>
 
     <string name="quotes_list">Quotes</string>
 
     <string name="save">Save</string>
 
 </resources>
+
