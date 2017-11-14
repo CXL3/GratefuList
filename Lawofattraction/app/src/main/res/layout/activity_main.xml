@@ -1,45 +1,26 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="com.appfunlu.lawofattraction.MainActivity">
 
-    <EditText
-        android:id="@+id/grateful_input_box"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="What are you grateful for today?"
-        android:textSize="25sp"/>
+    <TextView
+        android:id="@+id/gratitude_front_page"
+        style="@style/ListStyle"
+        android:background="@color/colorPrimaryDark"
+        android:text="@string/grateful_list" />
 
-    <Button
-        android:id="@+id/save_glist_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        android:textSize="22sp"
-        android:onClick="saveGratitudeList"
-        android:text="@string/save"/>
+    <TextView
+        android:id="@+id/vision_front_page"
+        style="@style/ListStyle"
+        android:background="@color/colorAccent"
+        android:text="@string/vision_list" />
 
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15sp">
-
-            <TextView
-                android:id="@+id/grateful_list"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="22sp"/>
-
-        </ScrollView>
-
-    </FrameLayout>
+    <TextView
+        android:id="@+id/quote_front_page"
+        style="@style/ListStyle"
+        android:background="@color/colorQuote"
+        android:text="@string/quotes_list" />
 
 </LinearLayout>

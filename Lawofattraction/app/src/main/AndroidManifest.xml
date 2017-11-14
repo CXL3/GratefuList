@@ -19,6 +19,15 @@
         </activity>
 
         <activity
+            android:name="com.appfunlu.lawofattraction.GratitudeActivity"
+            android:parentActivityName="com.appfunlu.lawofattraction.MainActivity"
+            android:label="Gratitude List">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.appfunlu.lawofattraction.MainActivity" />
+        </activity>
+
+        <activity
             android:name="com.appfunlu.lawofattraction.VisionActivity"
             android:parentActivityName="com.appfunlu.lawofattraction.MainActivity"
             android:label="Vision List">
