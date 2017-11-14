@@ -4,4 +4,5 @@
     <color name="colorPrimaryDark">#64FFDA</color>
     <color name="colorAccent">#1DE9B6</color>
     <color name="colorQuote">#00BFA5</color>
+    <color name="colorGratitude">#A7FFEB</color>
 </resources>

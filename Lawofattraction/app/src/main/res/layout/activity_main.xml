@@ -8,14 +8,20 @@
     <TextView
         android:id="@+id/gratitude_front_page"
         style="@style/ListStyle"
-        android:background="@color/colorPrimaryDark"
+        android:background="@color/colorGratitude"
         android:text="@string/grateful_list" />
 
     <TextView
         android:id="@+id/vision_front_page"
         style="@style/ListStyle"
-        android:background="@color/colorAccent"
+        android:background="@color/colorPrimaryDark"
         android:text="@string/vision_list" />
+
+    <TextView
+        android:id="@+id/picture_front_page"
+        style="@style/ListStyle"
+        android:background="@color/colorAccent"
+        android:text="@string/vision_pictures" />
 
     <TextView
         android:id="@+id/quote_front_page"
