@@ -16,9 +16,12 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
-        TextView numbers = (TextView) findViewById(R.id.gratitude_front_page);
 
-        numbers.setOnClickListener(new View.OnClickListener() {
+
+
+        TextView gratitudeFront = (TextView) findViewById(R.id.gratitude_front_page);
+
+        gratitudeFront.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View view) {
@@ -30,10 +33,13 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-        TextView family = (TextView) findViewById(R.id.vision_front_page);
 
 
-        family.setOnClickListener(new View.OnClickListener() {
+
+        TextView VisionFront = (TextView) findViewById(R.id.vision_front_page);
+
+
+        VisionFront.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View view) {
@@ -46,9 +52,13 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-        TextView colors = (TextView) findViewById(R.id.quote_front_page);
 
-        colors.setOnClickListener(new View.OnClickListener() {
+
+
+
+        TextView QuoteFront = (TextView) findViewById(R.id.quote_front_page);
+
+        QuoteFront.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View view) {
