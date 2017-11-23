@@ -36,6 +36,16 @@
                 android:value="com.appfunlu.lawofattraction.MainActivity" />
         </activity>
 
+
+        <activity
+            android:name="com.appfunlu.lawofattraction.PicturesActivity"
+            android:parentActivityName="com.appfunlu.lawofattraction.MainActivity"
+            android:label="Vision Pictures">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.appfunlu.lawofattraction.MainActivity" />
+        </activity>
+
         <activity
             android:name="com.appfunlu.lawofattraction.QuotesActivity"
             android:parentActivityName="com.appfunlu.lawofattraction.MainActivity"
