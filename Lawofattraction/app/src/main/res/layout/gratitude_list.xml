@@ -23,23 +23,9 @@
         android:onClick="saveGratitudeList"
         android:text="@string/save"/>
 
-    <FrameLayout
+    <android.support.v7.widget.RecyclerView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15sp">
-
-            <TextView
-                android:id="@+id/grateful_list"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="22sp"/>
-
-        </ScrollView>
-
-    </FrameLayout>
+        android:layout_height="match_parent"
+        android:id="@+id/grateful_layout_list"/>
 
 </LinearLayout>

@@ -7,35 +7,20 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.EditText;
-import android.widget.TextView;
 
 public class GratitudeActivity extends AppCompatActivity {
 
-    private EditText mInputGratefulList;
 
-    private TextView mGratefulList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.gratitude_list);
 
-        mInputGratefulList = (EditText) findViewById(R.id.grateful_input_box);
 
-        mGratefulList = (TextView) findViewById(R.id.grateful_list);
 
     }
 
-    /**
-     * This Method retrieves the text from EditText and
-     * dislpay it in the TextView
-     */
-    private void showGratefulText(){
-        String gTextInput = mInputGratefulList.getText().toString();
-        mGratefulList.setText(gTextInput.toString());
-    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -68,8 +53,4 @@ public class GratitudeActivity extends AppCompatActivity {
     }
 
 
-    public void saveGratitudeList(View v) {
-
-        showGratefulText();
-    }
 }
