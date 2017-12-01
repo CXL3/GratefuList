@@ -4,20 +4,32 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 
+import com.appfunlu.lawofattraction.Adapters.GratitudeAdapter;
+
 public class GratitudeActivity extends AppCompatActivity {
 
 
+    private GratitudeAdapter mGratitudeAdapter;
+    private RecyclerView mGratitudeRecyclerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.gratitude_list);
 
+        mGratitudeRecyclerView = (RecyclerView) this.findViewById(R.id.grateful_layout_list);
 
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
+        mGratitudeRecyclerView.setLayoutManager(layoutManager);
+
+        mGratitudeAdapter = new GratitudeAdapter();
+        mGratitudeRecyclerView.setAdapter(mGratitudeAdapter);
 
     }
 
