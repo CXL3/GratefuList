@@ -9,6 +9,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.appfunlu.lawofattraction.Adapters.GratitudeAdapter;
 
@@ -23,13 +24,35 @@ public class GratitudeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.gratitude_list);
 
+
+        /**
+         * We get a reference to the Gratitude's RecyclerView by using findViewById.
+         */
         mGratitudeRecyclerView = (RecyclerView) this.findViewById(R.id.grateful_layout_list);
 
-        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
-        mGratitudeRecyclerView.setLayoutManager(layoutManager);
+
+        /**
+         * created gLayoutManager. And set gLayoutManager on mGratitudeRecyclerView;
+         */
+        LinearLayoutManager gLayoutManager = new LinearLayoutManager(this);
+        mGratitudeRecyclerView.setLayoutManager(gLayoutManager);
+
+
+        /**
+         * set mGratitudeAdapter equals to a new GratitudeAdapter
+         * Setting the adaptor to the RecyclerView.
+         */
 
         mGratitudeAdapter = new GratitudeAdapter();
         mGratitudeRecyclerView.setAdapter(mGratitudeAdapter);
+
+
+    }
+
+    /**
+     * When the user click on the save button
+     */
+    public void saveGratitudeList(View view) {
 
     }
 

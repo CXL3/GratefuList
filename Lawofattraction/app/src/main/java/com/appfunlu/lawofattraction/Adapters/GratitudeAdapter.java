@@ -66,6 +66,7 @@ public class GratitudeAdapter extends RecyclerView.Adapter<GratitudeAdapter.Grat
      * It will show the Grateful List that the users inputted.
      */
     class GratitudeViewHolder extends RecyclerView.ViewHolder {
+
         TextView gratefulFinalView;
 
         /**
