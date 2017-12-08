@@ -27,7 +27,7 @@ public class GratitudeDbHelper extends SQLiteOpenHelper {
                 GratitudeContract.GratitudeEntry._ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
                 GratitudeContract.GratitudeEntry.COLUMN_GRATEFUL_LIST + " TEXT NOT NULL, " +
                 "); ";
-        /* Execuate the SQL. */
+        /* Execute the SQL. */
         sqLiteDatabase.execSQL(SQL_CREATE_GRATITUDE_TABLE);
     }
 
