@@ -16,6 +16,7 @@ public class GratitudeContract {
         /* I have created static final members for the table name and the db column.*/
         public static final String TABLE_NAME = "Gratitude";
         public static final String COLUMN_GRATEFUL_LIST = "gratefulList";
+        public static final String COLUMN_TIMESTAMP = "timestamp";
 
 
     }

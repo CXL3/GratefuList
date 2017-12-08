@@ -26,6 +26,7 @@ public class GratitudeDbHelper extends SQLiteOpenHelper {
         final String SQL_CREATE_GRATITUDE_TABLE = "CREATE TABLE " + GratitudeContract.GratitudeEntry.TABLE_NAME + " (" +
                 GratitudeContract.GratitudeEntry._ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
                 GratitudeContract.GratitudeEntry.COLUMN_GRATEFUL_LIST + " TEXT NOT NULL, " +
+                GratitudeContract.GratitudeEntry.COLUMN_TIMESTAMP + " TIMESTAMP DEFAULT CURRENT_TIMESTAMP" +
                 "); ";
         /* Execute the SQL. */
         sqLiteDatabase.execSQL(SQL_CREATE_GRATITUDE_TABLE);

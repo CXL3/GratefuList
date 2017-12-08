@@ -16,6 +16,23 @@ import com.appfunlu.lawofattraction.R;
 
 public class GratitudeAdapter extends RecyclerView.Adapter<GratitudeAdapter.GratitudeViewHolder> {
 
+    /** the calling context variable.
+     * the count of list.
+     */
+    private  Context gContext;
+    private int numberOfgList;
+
+    /**
+     *Added Adapter constructor to accept the context and count
+     * @param context the calling context
+     * @param count the count of list
+     */
+
+    public GratitudeAdapter(Context context, int count){
+        this.gContext=context;
+        numberOfgList = count;
+    }
+
     /**
      * Override the onCreateViewHolder method, since the ViewHolder is created.
      * @param viewGroup viewGroup The ViewGroup that the ViewHolders are contained within.
@@ -54,7 +71,7 @@ public class GratitudeAdapter extends RecyclerView.Adapter<GratitudeAdapter.Grat
      */
     @Override
     public int getItemCount() {
-        return 0;
+        return numberOfgList;
 
     }
 

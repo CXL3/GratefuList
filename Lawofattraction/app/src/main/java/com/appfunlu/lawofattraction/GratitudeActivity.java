@@ -2,6 +2,7 @@ package com.appfunlu.lawofattraction;
 
 import android.content.Context;
 import android.content.Intent;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -13,6 +14,7 @@ import android.view.MenuItem;
 import android.view.View;
 
 import com.appfunlu.lawofattraction.Adapters.GratitudeAdapter;
+import com.appfunlu.lawofattraction.Data.GratitudeContract;
 import com.appfunlu.lawofattraction.Data.GratitudeDbHelper;
 
 public class GratitudeActivity extends AppCompatActivity {
@@ -47,13 +49,19 @@ public class GratitudeActivity extends AppCompatActivity {
         GratitudeDbHelper dbHelper = new GratitudeDbHelper(this);
         gDb = dbHelper.getWritableDatabase();
 
+        /**
+         * Use the getGlist method and store all the result in gCursor
+         */
+        Cursor gCursor = getGList();
+
 
         /**
          * set mGratitudeAdapter equals to a new GratitudeAdapter
          * Setting the adaptor to the RecyclerView.
+         * pass the gCursor count to the adapter.
          */
 
-        mGratitudeAdapter = new GratitudeAdapter();
+        mGratitudeAdapter = new GratitudeAdapter(this, gCursor.getCount());
         mGratitudeRecyclerView.setAdapter(mGratitudeAdapter);
 
 
@@ -65,6 +73,25 @@ public class GratitudeActivity extends AppCompatActivity {
     public void saveGratitudeList(View view) {
 
     }
+
+    /**
+     * Created a method called getGList to query the gDb
+     * and get call the grateful list.
+     *
+     * @return Cursor containing the grateful list.
+     */
+    private Cursor getGList() {
+        return gDb.query(
+                GratitudeContract.GratitudeEntry.TABLE_NAME,
+                null,
+                null,
+                null,
+                null,
+                null,
+                GratitudeContract.GratitudeEntry.COLUMN_TIMESTAMP
+        );
+    }
+
 
 
     @Override
