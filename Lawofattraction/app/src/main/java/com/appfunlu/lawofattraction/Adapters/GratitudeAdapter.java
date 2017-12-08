@@ -2,12 +2,14 @@ package com.appfunlu.lawofattraction.Adapters;
 
 
 import android.content.Context;
+import android.database.Cursor;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.appfunlu.lawofattraction.Data.GratitudeContract;
 import com.appfunlu.lawofattraction.R;
 
 /**
@@ -17,22 +19,21 @@ import com.appfunlu.lawofattraction.R;
 public class GratitudeAdapter extends RecyclerView.Adapter<GratitudeAdapter.GratitudeViewHolder> {
 
     /** the calling context variable.
-     * the count of list.
+     * the cursor variable
      */
     private  Context gContext;
-    private int numberOfgList;
+    private Cursor gratitudeCursor;
 
     /**
-     *Added Adapter constructor to accept the context and count
+     * Added Adapter constructor to accept the context and count
      * @param context the calling context
-     * @param count the count of list
+     * @param cursor the db cursor with gratitude data to display
      */
 
-    public GratitudeAdapter(Context context, int count){
-        this.gContext=context;
-        numberOfgList = count;
+    public GratitudeAdapter(Context context, Cursor cursor){
+        this.gContext = context;
+        this.gratitudeCursor = cursor;
     }
-
     /**
      * Override the onCreateViewHolder method, since the ViewHolder is created.
      * @param viewGroup viewGroup The ViewGroup that the ViewHolders are contained within.
@@ -62,16 +63,33 @@ public class GratitudeAdapter extends RecyclerView.Adapter<GratitudeAdapter.Grat
     @Override
     public void onBindViewHolder(GratitudeViewHolder gViewholder, int position) {
 
+        /**
+         * passing in the current binding position
+         * return null if there's no data there or it's out of the bounds of the cursor
+         */
+        if (!gratitudeCursor.moveToPosition(position))
+
+            return;
+
+        /**
+         * Call getString on the cursor to get the grateful list.
+         */
+        String grateful = gratitudeCursor.getString(gratitudeCursor.getColumnIndex(GratitudeContract.GratitudeEntry.COLUMN_GRATEFUL_LIST));
+
+
+        /* Set gViewHolder's gratefulFinalView  text to the grateful list */
+        gViewholder.gratefulFinalView.setText(grateful);
+
     }
 
 
     /**
      * This method simply returns the number of items to display.
-     * @return 0 for now.
+     * @return the getCount of the cursor.
      */
     @Override
     public int getItemCount() {
-        return numberOfgList;
+        return gratitudeCursor.getCount();
 
     }
 

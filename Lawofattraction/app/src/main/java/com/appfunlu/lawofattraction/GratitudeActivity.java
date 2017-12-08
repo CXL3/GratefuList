@@ -58,10 +58,10 @@ public class GratitudeActivity extends AppCompatActivity {
         /**
          * set mGratitudeAdapter equals to a new GratitudeAdapter
          * Setting the adaptor to the RecyclerView.
-         * pass the gCursor count to the adapter.
+         * pass the gCursor to the adapter.
          */
 
-        mGratitudeAdapter = new GratitudeAdapter(this, gCursor.getCount());
+        mGratitudeAdapter = new GratitudeAdapter(this, gCursor);
         mGratitudeRecyclerView.setAdapter(mGratitudeAdapter);
 
 
