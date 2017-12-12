@@ -12,6 +12,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.EditText;
 
 import com.appfunlu.lawofattraction.Adapters.GratitudeAdapter;
 import com.appfunlu.lawofattraction.Data.GratitudeContract;
@@ -23,6 +24,7 @@ public class GratitudeActivity extends AppCompatActivity {
     private GratitudeAdapter mGratitudeAdapter;
     private RecyclerView mGratitudeRecyclerView;
     private SQLiteDatabase gDb;
+    private EditText mGratitudeInput;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +36,7 @@ public class GratitudeActivity extends AppCompatActivity {
          * We get a reference to the Gratitude's RecyclerView by using findViewById.
          */
         mGratitudeRecyclerView = (RecyclerView) this.findViewById(R.id.grateful_layout_list);
+        mGratitudeInput = (EditText) this.findViewById(R.id.grateful_input_box);
 
 
         /**
