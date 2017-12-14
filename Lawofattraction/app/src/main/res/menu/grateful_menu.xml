@@ -4,15 +4,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:id="@+id/vision_tab"
+        android:id="@+id/save_g_tab"
         android:orderInCategory="2"
         app:showAsAction="always"
-        android:title="@string/vision_list"/>
+        android:title="@string/save"/>
 
-    <item
-        android:id="@+id/quotes_tab"
-        android:orderInCategory="3"
-        app:showAsAction="always"
-        android:title="@string/quotes_list"/>
 
 </menu>

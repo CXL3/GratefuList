@@ -94,6 +94,21 @@ public class GratitudeAdapter extends RecyclerView.Adapter<GratitudeAdapter.Grat
     }
 
     /**
+     * Swaps the Cursor currently held in the adapter with a new one
+     */
+    public void swapCursor(Cursor newCursor) {
+
+        if (gratitudeCursor != null) gratitudeCursor.close();
+
+        gratitudeCursor = newCursor;
+
+        if (newCursor != null) {
+
+            this.notifyDataSetChanged();
+        }
+    }
+
+    /**
      * Created a class within GratitudeAdapter called GratitudeViewHolder.
      * It extends from the RecyclerView.ViewHolder.
      * This class will hold the gratitude list  in the recycler view

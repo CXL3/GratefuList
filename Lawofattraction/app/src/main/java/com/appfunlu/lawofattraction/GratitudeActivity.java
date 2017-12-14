@@ -1,7 +1,6 @@
 package com.appfunlu.lawofattraction;
 
-import android.content.Context;
-import android.content.Intent;
+import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -95,6 +94,19 @@ public class GratitudeActivity extends AppCompatActivity {
         );
     }
 
+    /**
+     * Created a method to add the list to the gDb.
+     * Created ContentValues to pass the gValues.
+     * Insert a new row in the database.
+     */
+    private long addGList(String gratitudeList) {
+
+        ContentValues gValues = new ContentValues();
+        gValues.put(GratitudeContract.GratitudeEntry.COLUMN_GRATEFUL_LIST, gratitudeList);
+
+        return gDb.insert(GratitudeContract.GratitudeEntry.TABLE_NAME, null, gValues);
+    }
+
 
 
     @Override
@@ -105,25 +117,21 @@ public class GratitudeActivity extends AppCompatActivity {
     }
 
 
+    /**
+     *If you click the save button, the new list will be added to the database.
+     */
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int itemThatWasClickedId = item.getItemId();
 
-        if (itemThatWasClickedId == R.id.vision_tab) {
-            Context context = GratitudeActivity.this;
-            Class destinationActivity1 = VisionActivity.class;
-            Intent startVisionActivityIntent = new Intent(context, destinationActivity1);
-            startActivity(startVisionActivityIntent);
+        if (itemThatWasClickedId == R.id.save_g_tab) {
+
+            addGList(mGratitudeInput.getText().toString());
+            mGratitudeAdapter.swapCursor(getGList());
+            mGratitudeInput.getText().clear();
             return true;
         }
 
-        if (itemThatWasClickedId == R.id.quotes_tab) {
-            Context context = GratitudeActivity.this;
-            Class destinationActivity2 = QuotesActivity.class;
-            Intent startQuotesActivityIntent = new Intent(context, destinationActivity2);
-            startActivity(startQuotesActivityIntent);
-            return true;
-        }
         return super.onOptionsItemSelected(item);
     }
 

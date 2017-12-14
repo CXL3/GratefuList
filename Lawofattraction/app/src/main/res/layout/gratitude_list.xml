@@ -13,15 +13,7 @@
         android:layout_height="wrap_content"
         android:hint="What are you grateful for today?"
         android:textSize="25sp"/>
-
-    <Button
-        android:id="@+id/save_glist_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        android:textSize="22sp"
-        android:onClick="saveGratitudeList"
-        android:text="@string/save"/>
+    
 
     <android.support.v7.widget.RecyclerView
         android:layout_width="match_parent"
