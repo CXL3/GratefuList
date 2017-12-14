@@ -135,5 +135,12 @@ public class GratitudeActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    /**
+     * This will remove the list with the specific ID.
+     */
+    private boolean removeGList(long id) {
+        return gDb.delete(GratitudeContract.GratitudeEntry.TABLE_NAME,
+                GratitudeContract.GratitudeEntry._ID + "=" + id, null) > 0;
+    }
 
 }
