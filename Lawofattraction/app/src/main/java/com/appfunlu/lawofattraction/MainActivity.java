@@ -14,7 +14,6 @@ public class MainActivity extends AppCompatActivity {
 
     private TextView gratitudeFront;
     private TextView visionFront;
-    private TextView picuturesFront;
     private TextView quoteFront;
 
     @Override
@@ -52,25 +51,6 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(vIntent);
             }
         });
-
-
-        /*
-         * Set the TextView to this variable and set a click listener on it.
-         * the intent will open the PictureActivity
-         */
-
-        picuturesFront = (TextView) findViewById(R.id.picture_front_page);
-        picuturesFront.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View view) {
-                Intent vIntent = new Intent(MainActivity.this, PicturesActivity.class);
-                startActivity(vIntent);
-            }
-        });
-
-
-
 
         /*
          * Set the TextView to this variable and set a click listener on it.

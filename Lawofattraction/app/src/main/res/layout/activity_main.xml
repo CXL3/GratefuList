@@ -18,12 +18,6 @@
         android:text="@string/vision_list" />
 
     <TextView
-        android:id="@+id/picture_front_page"
-        style="@style/ListStyle"
-        android:background="@color/colorAccent"
-        android:text="@string/vision_pictures" />
-
-    <TextView
         android:id="@+id/quote_front_page"
         style="@style/ListStyle"
         android:background="@color/colorQuote"
