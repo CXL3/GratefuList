@@ -65,22 +65,26 @@ public class GratitudeAdapter extends RecyclerView.Adapter<GratitudeAdapter.Grat
 
         /**
          * passing in the current binding position
-         * return null if there's no data there or it's out of the bounds of the cursor
+         * return false if there's no data there or it's out of the bounds of the cursor
          */
         if (!gratitudeCursor.moveToPosition(position))
 
             return;
 
         /**
-         * Call getString on the cursor to get the grateful list.
+         * Call getString on the cursor to get the grateful list. set the string result to
          */
         String grateful = gratitudeCursor.getString(gratitudeCursor.getColumnIndex(GratitudeContract.GratitudeEntry.COLUMN_GRATEFUL_LIST));
 
+        long id = gratitudeCursor.getLong(gratitudeCursor.getColumnIndex(GratitudeContract.GratitudeEntry._ID));
 
-        /* Set gViewHolder's gratefulFinalView  text to the grateful list */
+
+        /* Display the cursor String on the Gratitude page's Textview gratefulFinalView */
         gViewholder.gratefulFinalView.setText(grateful);
 
+        gViewholder.itemView.setTag(id);
     }
+
 
 
     /**
@@ -89,9 +93,7 @@ public class GratitudeAdapter extends RecyclerView.Adapter<GratitudeAdapter.Grat
      */
     @Override
     public int getItemCount() {
-        return gratitudeCursor.getCount();
-
-    }
+        return gratitudeCursor.getCount();}
 
     /**
      * Swaps the Cursor currently held in the adapter with a new one

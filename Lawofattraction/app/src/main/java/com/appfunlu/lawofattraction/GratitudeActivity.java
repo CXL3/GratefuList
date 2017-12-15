@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.helper.ItemTouchHelper;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -66,7 +67,29 @@ public class GratitudeActivity extends AppCompatActivity {
         mGratitudeAdapter = new GratitudeAdapter(this, gCursor);
         mGratitudeRecyclerView.setAdapter(mGratitudeAdapter);
 
+        /**
+         * Use ItemTouchHelper.SimpleCallback to drag item around, and to delete the list by swiping
+         */
 
+        new ItemTouchHelper(new ItemTouchHelper.SimpleCallback (ItemTouchHelper.UP | ItemTouchHelper.DOWN, ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT) {
+
+            @Override
+            public boolean onMove(RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder, RecyclerView.ViewHolder target) {
+                final int fromPosition = viewHolder.getAdapterPosition();
+                final int toPosition = target.getAdapterPosition();
+
+                return true;
+            }
+
+            @Override
+            public void onSwiped(RecyclerView.ViewHolder viewHolder, int swipeDir) {
+
+                long id = (long) viewHolder.itemView.getTag();
+                removeGList(id);
+                mGratitudeAdapter.swapCursor(getGList());
+            }
+
+        }).attachToRecyclerView(mGratitudeRecyclerView);
     }
 
     /**
