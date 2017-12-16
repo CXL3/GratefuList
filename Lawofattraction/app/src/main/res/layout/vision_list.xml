@@ -14,33 +14,10 @@
         android:layout_height="wrap_content"
         android:hint="What is your dream?"
         android:textSize="25sp"/>
-    
-    <Button
-        android:id="@+id/save_vlist_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        android:textSize="22sp"
-        android:onClick="saveVisionList"
-        android:text="@string/save"/>
-    
-    <FrameLayout
+
+    <android.support.v7.widget.RecyclerView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15sp">
-
-            <TextView
-                android:id="@+id/vision_list"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="22sp"/>
-
-        </ScrollView>
-
-    </FrameLayout>
+        android:layout_height="match_parent"
+        android:id="@+id/vision_layout_list"/>
 
 </LinearLayout>

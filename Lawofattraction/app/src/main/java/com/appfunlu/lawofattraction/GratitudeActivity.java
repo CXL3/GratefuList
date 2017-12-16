@@ -11,7 +11,6 @@ import android.support.v7.widget.helper.ItemTouchHelper;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.EditText;
 
 import com.appfunlu.lawofattraction.Adapters.GratitudeAdapter;
@@ -90,13 +89,6 @@ public class GratitudeActivity extends AppCompatActivity {
             }
 
         }).attachToRecyclerView(mGratitudeRecyclerView);
-    }
-
-    /**
-     * When the user click on the save button
-     */
-    public void saveGratitudeList(View view) {
-
     }
 
     /**
