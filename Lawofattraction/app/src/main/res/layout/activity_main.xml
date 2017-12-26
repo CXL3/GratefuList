@@ -20,7 +20,7 @@
     <TextView
         android:id="@+id/quote_front_page"
         style="@style/ListStyle"
-        android:background="@color/colorQuote"
+        android:background="@color/colorAccent"
         android:text="@string/quotes_list" />
 
 </LinearLayout>

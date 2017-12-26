@@ -1,54 +1,40 @@
 package com.appfunlu.lawofattraction;
 
-import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
-import android.widget.TextView;
+import android.webkit.WebSettings;
+import android.webkit.WebView;
+
+import static com.appfunlu.lawofattraction.R.id.webView;
 
 
 public class QuotesActivity extends AppCompatActivity{
 
-    private TextView mQuotes;
+    private WebView webview;
+
+    /** URL to query the quotes from my website appfunlu.com. I update the quote daily*/
+    private static final String QUOTE_URL =
+            "https://appfunlu.com/wp-json/wp/v2/posts";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.inspirational_quotes);
 
-        mQuotes = (TextView) findViewById(R.id.quotes_display);
-    }
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.quotes_menu, menu);
-        return true;
-    }
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        int itemThatWasClickedId = item.getItemId();
 
-        if (itemThatWasClickedId == R.id.grateful_tab3) {
-            Context context = QuotesActivity.this;
-            Class destinationActivity5 = MainActivity.class;
-            Intent startMainActivityIntent = new Intent(context, destinationActivity5);
-            startActivity(startMainActivityIntent);
-            return true;
+        webview = (WebView) findViewById(webView);
+        webview.getSettings().setJavaScriptEnabled(true);
+        webview.getSettings().setLoadWithOverviewMode(true);
+        webview.getSettings().setUseWideViewPort(true);
+        webview.getSettings().setSupportZoom(true);
+        webview.getSettings().setBuiltInZoomControls(false);
+        webview.getSettings().setLayoutAlgorithm(WebSettings.LayoutAlgorithm.SINGLE_COLUMN);
+        webview.getSettings().setCacheMode(WebSettings.LOAD_NO_CACHE);
+        webview.getSettings().setDomStorageEnabled(true);
+        webview.setScrollbarFadingEnabled(true);
+        webview.loadUrl("https://appfunlu.com/dq/");
 
-        }
 
-        if (itemThatWasClickedId == R.id.vision_tab3) {
-            Context context = QuotesActivity.this;
-            Class destinationActivity6 = VisionActivity.class;
-            Intent startMainActivityIntent = new Intent(context, destinationActivity6);
-            startActivity(startMainActivityIntent);
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
     }
 
 }
