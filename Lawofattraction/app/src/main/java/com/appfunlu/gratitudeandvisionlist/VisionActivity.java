@@ -1,5 +1,4 @@
-package com.appfunlu.lawofattraction;
-
+package com.appfunlu.gratitudeandvisionlist;
 
 import android.content.ContentValues;
 import android.database.Cursor;
@@ -14,11 +13,11 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.EditText;
 
-import com.appfunlu.lawofattraction.Adapters.VisionAdapter;
-import com.appfunlu.lawofattraction.Data.VisionContract;
-import com.appfunlu.lawofattraction.Data.VisionDbHelper;
+import com.appfunlu.gratitudeandvisionlist.Adapters.VisionAdapter;
+import com.appfunlu.gratitudeandvisionlist.Data.VisionContract;
+import com.appfunlu.gratitudeandvisionlist.Data.VisionDbHelper;
 
-public class VisionActivity extends AppCompatActivity{
+public class VisionActivity extends AppCompatActivity {
 
 
     private VisionAdapter mVisionAdapter;
@@ -49,8 +48,8 @@ public class VisionActivity extends AppCompatActivity{
          * Create a DB helper.
          * Get a writable data reference.
          */
-        VisionDbHelper dbHelper2 = new VisionDbHelper(this);
-        vDb = dbHelper2.getWritableDatabase();
+        VisionDbHelper dbHelper = new VisionDbHelper(this);
+        vDb = dbHelper.getWritableDatabase();
 
         /**
          * Use the getVlist method and store all the result in vCursor
@@ -84,8 +83,8 @@ public class VisionActivity extends AppCompatActivity{
             @Override
             public void onSwiped(RecyclerView.ViewHolder viewHolder, int swipeDir) {
 
-                long id2 = (long) viewHolder.itemView.getTag();
-                removeVList(id2);
+                long id = (long) viewHolder.itemView.getTag();
+                removeVList(id);
                 mVisionAdapter.swapCursor(getVList());
             }
 
@@ -94,7 +93,7 @@ public class VisionActivity extends AppCompatActivity{
 
 
     /**
-     * Created a method called getGList to query the gDb
+     * Created a method called getVList to query the gDb
      * and get call the vision list.
      *
      * @return Cursor containing the vision list.
@@ -111,9 +110,10 @@ public class VisionActivity extends AppCompatActivity{
         );
     }
 
+
     /**
-     * Created a method to add the list to the vDb.
-     * Created ContentValues to pass the vValues.
+     * Created a method to add the list to the gDb.
+     * Created ContentValues to pass the gValues.
      * Insert a new row in the database.
      */
     private long addVList(String visionList) {
@@ -123,6 +123,8 @@ public class VisionActivity extends AppCompatActivity{
 
         return vDb.insert(VisionContract.VisionEntry.TABLE_NAME, null, vValues);
     }
+
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -151,9 +153,9 @@ public class VisionActivity extends AppCompatActivity{
     /**
      * This will remove the list with the specific ID.
      */
-    private boolean removeVList(long id2) {
+    private boolean removeVList(long id) {
         return vDb.delete(VisionContract.VisionEntry.TABLE_NAME,
-                VisionContract.VisionEntry._ID + "=" + id2, null) > 0;
+                VisionContract.VisionEntry._ID + "=" + id, null) > 0;
     }
 
 }

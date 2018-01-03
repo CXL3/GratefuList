@@ -1,4 +1,4 @@
-package com.appfunlu.lawofattraction;
+package com.appfunlu.gratitudeandvisionlist;
 
 import android.content.ContentValues;
 import android.database.Cursor;
@@ -13,24 +13,26 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.EditText;
 
-import com.appfunlu.lawofattraction.Adapters.GratitudeAdapter;
-import com.appfunlu.lawofattraction.Data.GratitudeContract;
-import com.appfunlu.lawofattraction.Data.GratitudeDbHelper;
+import com.appfunlu.gratitudeandvisionlist.Adapters.GratitudeAdapter;
+import com.appfunlu.gratitudeandvisionlist.Data.GratitudeContract;
+import com.appfunlu.gratitudeandvisionlist.Data.GratitudeDbHelper;
 
 public class GratitudeActivity extends AppCompatActivity {
 
-
     private GratitudeAdapter mGratitudeAdapter;
+
     private RecyclerView mGratitudeRecyclerView;
+
     private SQLiteDatabase gDb;
+
     private EditText mGratitudeInput;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.gratitude_list);
-
-
+        setContentView(R.layout.gratitude_list_item);
         /**
          * We get a reference to the Gratitude's RecyclerView by using findViewById.
          */
@@ -43,7 +45,6 @@ public class GratitudeActivity extends AppCompatActivity {
          */
         LinearLayoutManager gLayoutManager = new LinearLayoutManager(this);
         mGratitudeRecyclerView.setLayoutManager(gLayoutManager);
-
         /**
          * Create a DB helper.
          * Get a writable data reference.
@@ -91,6 +92,8 @@ public class GratitudeActivity extends AppCompatActivity {
         }).attachToRecyclerView(mGratitudeRecyclerView);
     }
 
+
+
     /**
      * Created a method called getGList to query the gDb
      * and get call the grateful list.
@@ -122,15 +125,12 @@ public class GratitudeActivity extends AppCompatActivity {
         return gDb.insert(GratitudeContract.GratitudeEntry.TABLE_NAME, null, gValues);
     }
 
-
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.grateful_menu, menu);
         return true;
     }
-
 
     /**
      *If you click the save button, the new list will be added to the database.
@@ -157,5 +157,7 @@ public class GratitudeActivity extends AppCompatActivity {
         return gDb.delete(GratitudeContract.GratitudeEntry.TABLE_NAME,
                 GratitudeContract.GratitudeEntry._ID + "=" + id, null) > 0;
     }
+
+
 
 }

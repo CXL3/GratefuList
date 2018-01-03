@@ -1,5 +1,4 @@
-package com.appfunlu.lawofattraction.Adapters;
-
+package com.appfunlu.gratitudeandvisionlist.Adapters;
 
 import android.content.Context;
 import android.database.Cursor;
@@ -9,8 +8,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.appfunlu.lawofattraction.Data.GratitudeContract;
-import com.appfunlu.lawofattraction.R;
+import com.appfunlu.gratitudeandvisionlist.Data.GratitudeContract;
+import com.appfunlu.gratitudeandvisionlist.R;
 
 /**
  * From GratitudeAdapter, extend RecyclerView.Adapter<GratitudeAdapter.GratitudeViewHolder>
@@ -18,10 +17,10 @@ import com.appfunlu.lawofattraction.R;
 
 public class GratitudeAdapter extends RecyclerView.Adapter<GratitudeAdapter.GratitudeViewHolder> {
 
-    /** the calling context variable.
-     * the cursor variable
+    /** Added the calling context variable.
+     * Added the cursor variable
      */
-    private  Context gContext;
+    private Context gContext;
     private Cursor gratitudeCursor;
 
     /**
@@ -34,6 +33,7 @@ public class GratitudeAdapter extends RecyclerView.Adapter<GratitudeAdapter.Grat
         this.gContext = context;
         this.gratitudeCursor = cursor;
     }
+
     /**
      * Override the onCreateViewHolder method, since the ViewHolder is created.
      * @param viewGroup viewGroup The ViewGroup that the ViewHolders are contained within.
@@ -42,7 +42,6 @@ public class GratitudeAdapter extends RecyclerView.Adapter<GratitudeAdapter.Grat
     @Override
     public GratitudeViewHolder onCreateViewHolder(ViewGroup viewGroup, int viewType) {
 
-        Context gContext = viewGroup.getContext();
         LayoutInflater inflater = LayoutInflater.from(gContext);
 
         boolean shouldAttachToParentImmediately = false;
@@ -50,8 +49,6 @@ public class GratitudeAdapter extends RecyclerView.Adapter<GratitudeAdapter.Grat
 
         return new GratitudeViewHolder(view);
     }
-
-
 
     /**
      * Override onBindViewHolder.
@@ -83,17 +80,19 @@ public class GratitudeAdapter extends RecyclerView.Adapter<GratitudeAdapter.Grat
         gViewholder.gratefulFinalView.setText(grateful);
 
         gViewholder.itemView.setTag(id);
+
+
+
     }
-
-
 
     /**
      * This method simply returns the number of items to display.
-     * @return the getCount of the cursor.
+     * @return the getCount of the cursor
      */
     @Override
     public int getItemCount() {
-        return gratitudeCursor.getCount();}
+        return gratitudeCursor.getCount();
+    }
 
     /**
      * Swaps the Cursor currently held in the adapter with a new one
@@ -109,6 +108,9 @@ public class GratitudeAdapter extends RecyclerView.Adapter<GratitudeAdapter.Grat
             this.notifyDataSetChanged();
         }
     }
+
+
+
 
     /**
      * Created a class within GratitudeAdapter called GratitudeViewHolder.
@@ -130,9 +132,6 @@ public class GratitudeAdapter extends RecyclerView.Adapter<GratitudeAdapter.Grat
             super(itemView);
             gratefulFinalView = (TextView) itemView.findViewById(R.id.g_recycler_text);
 
-
-
         }
     }
-
 }

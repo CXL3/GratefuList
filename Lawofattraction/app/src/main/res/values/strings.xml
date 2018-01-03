@@ -11,5 +11,6 @@
 
     <string name="save">Save</string>
 
-</resources>
+    <string name="error_message">Failed to load the webiste. Please try later.</string>
 
+</resources>

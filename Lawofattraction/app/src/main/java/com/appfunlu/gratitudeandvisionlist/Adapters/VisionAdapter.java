@@ -1,4 +1,4 @@
-package com.appfunlu.lawofattraction.Adapters;
+package com.appfunlu.gratitudeandvisionlist.Adapters;
 
 import android.content.Context;
 import android.database.Cursor;
@@ -8,8 +8,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.appfunlu.lawofattraction.Data.VisionContract;
-import com.appfunlu.lawofattraction.R;
+import com.appfunlu.gratitudeandvisionlist.Data.VisionContract;
+import com.appfunlu.gratitudeandvisionlist.R;
 
 public class VisionAdapter extends RecyclerView.Adapter<VisionAdapter.VisionViewHolder> {
 
@@ -71,13 +71,13 @@ public class VisionAdapter extends RecyclerView.Adapter<VisionAdapter.VisionView
          */
         String vision = visionCursor.getString(visionCursor.getColumnIndex(VisionContract.VisionEntry.COLUMN_VISION_LIST));
 
-        long id2 = visionCursor.getLong(visionCursor.getColumnIndex(VisionContract.VisionEntry._ID));
+        long id = visionCursor.getLong(visionCursor.getColumnIndex(VisionContract.VisionEntry._ID));
 
 
         /* Display the cursor String on the Vision page's Textview visionFinalView */
         vViewholder.visionFinalView.setText(vision);
 
-        vViewholder.itemView.setTag(id2);
+        vViewholder.itemView.setTag(id);
     }
 
 

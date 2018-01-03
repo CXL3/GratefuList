@@ -1,4 +1,4 @@
-package com.appfunlu.lawofattraction.Data;
+package com.appfunlu.gratitudeandvisionlist.Data;
 
 import android.provider.BaseColumns;
 
@@ -13,7 +13,7 @@ public class VisionContract {
         /* I have created static final members for the table name and the db column.*/
         public static final String TABLE_NAME = "Vision";
         public static final String COLUMN_VISION_LIST = "visionList";
-        public static final String COLUMN_TIMESTAMP = "timestamp2";
+        public static final String COLUMN_TIMESTAMP = "timestamp";
 
 
     }

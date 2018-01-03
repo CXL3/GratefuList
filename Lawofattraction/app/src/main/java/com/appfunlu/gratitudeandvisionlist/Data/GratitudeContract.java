@@ -1,4 +1,4 @@
-package com.appfunlu.lawofattraction.Data;
+package com.appfunlu.gratitudeandvisionlist.Data;
 
 import android.provider.BaseColumns;
 

@@ -1,4 +1,4 @@
-package com.appfunlu.lawofattraction;
+package com.appfunlu.gratitudeandvisionlist;
 
 import org.junit.Test;
 

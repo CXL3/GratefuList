@@ -4,13 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.appfunlu.lawofattraction.QuotesActivity">
+    android:layout_height="match_parent">
 
-        <WebView
-            android:id="@+id/webView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+    <WebView
+        android:id="@+id/webView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"/>
 
+    <ProgressBar
+        android:id="@+id/loading_indicator"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:visibility="invisible"
+        android:layout_gravity="center" />
 
 </LinearLayout>
