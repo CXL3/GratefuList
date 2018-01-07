@@ -1,4 +1,21 @@
-package com.appfunlu.gratitudeandvisionlist.Adapters;
+/*
+ * Copyright 2018.  Xi Lu
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package com.appfunlu.draftforlawofattractionapp.Adapters;
+
 
 import android.content.Context;
 import android.database.Cursor;
@@ -8,8 +25,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.appfunlu.gratitudeandvisionlist.Data.GratitudeContract;
-import com.appfunlu.gratitudeandvisionlist.R;
+import com.appfunlu.draftforlawofattractionapp.Data.GratitudeContract;
+import com.appfunlu.draftforlawofattractionapp.R;
+
 
 /**
  * From GratitudeAdapter, extend RecyclerView.Adapter<GratitudeAdapter.GratitudeViewHolder>
@@ -20,7 +38,7 @@ public class GratitudeAdapter extends RecyclerView.Adapter<GratitudeAdapter.Grat
     /** Added the calling context variable.
      * Added the cursor variable
      */
-    private Context gContext;
+    private  Context gContext;
     private Cursor gratitudeCursor;
 
     /**
@@ -54,7 +72,7 @@ public class GratitudeAdapter extends RecyclerView.Adapter<GratitudeAdapter.Grat
      * Override onBindViewHolder.
      * It is is called by the RecyclerView to display the data at the specified position.
      * @param gViewholder The ViewHolder which should be updated to represent the contents of the
-    item at the given position in the data set.
+                          item at the given position in the data set.
      * @param position The position of the item within the adapter's data set.
      */
     @Override

@@ -1,4 +1,19 @@
-package com.appfunlu.gratitudeandvisionlist;
+/*
+ * Copyright 2018.  Xi Lu
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+package com.appfunlu.draftforlawofattractionapp;
 
 import android.content.ContentValues;
 import android.database.Cursor;
@@ -13,9 +28,9 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.EditText;
 
-import com.appfunlu.gratitudeandvisionlist.Adapters.GratitudeAdapter;
-import com.appfunlu.gratitudeandvisionlist.Data.GratitudeContract;
-import com.appfunlu.gratitudeandvisionlist.Data.GratitudeDbHelper;
+import com.appfunlu.draftforlawofattractionapp.Adapters.GratitudeAdapter;
+import com.appfunlu.draftforlawofattractionapp.Data.GratitudeContract;
+import com.appfunlu.draftforlawofattractionapp.Data.GratitudeDbHelper;
 
 public class GratitudeActivity extends AppCompatActivity {
 
