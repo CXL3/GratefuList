@@ -7,7 +7,9 @@ You can save your grateful and vision list on this simple android app. It also s
 
 
 -Your gratitude list helps you to stay more grateful and happy :-)
+
 -Your vision list encourages you to focus on your goals
+
 -The daily quote will help to enlighten you
 
 This application is good for people who appreciate the laws of attraction.
